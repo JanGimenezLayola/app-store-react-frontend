@@ -8,7 +8,7 @@ class AppStoreService {
   }
 
   getAllApps() {
-    this.appStore.get('/apps')
+    return this.appStore.get('/apps')
     .then(response => response)
   };
 
@@ -26,5 +26,8 @@ class AppStoreService {
     return this.appStore.delete(`/apps/${id}/delete`, deletedApp)
     .then(response => response)
   };
-
 }
+
+const appStoreService = new AppStoreService();
+
+export default appStoreService;
